@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 
+//function used to fetch workout gif from giphy
+
 export default function useFetchWorkout(workout) {
   const [workouts, setWorkouts] = useState([]);
 

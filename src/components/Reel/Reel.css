@@ -1,0 +1,23 @@
+.Reel {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 300px;
+  width: 300px;
+  transform-style: preserve-3d;
+  z-index: -1;
+}
+
+.Reel_Animation_Start {
+  animation-name: x-spin;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+.Reel_Animation_Stop {
+  animation-name: x-spin;
+  animation-duration: 2s;
+  animation-iteration-count: 5;
+  animation-timing-function: ease;
+}
