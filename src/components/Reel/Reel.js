@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import useFetchWorkouts from "../../custom-hooks/useFetchWorkouts";
+import "./Reel.css";
+import Button from "../Button/Button";
 
 export default function Reel() {
   const [reelAnimation, setReelAnimation] = useState("");
@@ -38,13 +40,13 @@ export default function Reel() {
 
   function handleStart() {
     //able to ADD "Ring_Animation" to className
-    setReelAnimation("Reel_Animation_Start");
+    setReelAnimation("Reel_Animation_START");
     console.log("--Starting Animation---");
   }
 
   function handleStop() {
     //REMOVES "Ring_Animation" from className
-    setReelAnimation("Reel_Animation_Stop");
+    setReelAnimation("Reel_Animation_STOP");
     console.log("---The Animation has STOPPED ---");
 
     //changes the slotNumber array so the ending animation changes
@@ -59,7 +61,7 @@ export default function Reel() {
   return (
     <>
       <div className={`Reel ${reelAnimation}`}>
-        <span>{`${excerciseText}`}</span>
+        <span className="ExerciseText">{`${excerciseText}`}</span>
         {pushups.map((pushup) => (
           <video
             key={pushup}
@@ -101,8 +103,18 @@ export default function Reel() {
           />
         ))}
       </div>
-      <button onClick={handleStart}>START</button>
-      <button onClick={handleStop}>STOP</button>
+      {/* <button onClick={handleStart}>START</button>
+      <button onClick={handleStop}>STOP</button> */}
+      <Button
+        className={"StartButton"}
+        buttonName={"Start"}
+        clicked={() => handleStart()}
+      />
+      <Button
+        className={"StopButton"}
+        buttonName={"Stop"}
+        clicked={handleStop}
+      />
     </>
   );
 }
