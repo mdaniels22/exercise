@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import useFetchWorkouts from "../../custom-hooks/useFetchWorkouts";
 import "./Reel.css";
 import Button from "../Button/Button";
@@ -8,6 +8,27 @@ export default function Reel() {
   //changes the slotNumber in order to change the starting/ending exercise animation
   const [slotNumber, setSlotNumber] = useState(["1", "2", "3", "4"]);
   const [excerciseText, setExerciseText] = useState("Exercise!");
+
+  //enalbe button to be disabled
+  const [disableButton, setDisableButton] = useState("");
+
+  //creates countdown
+  const [time, setTime] = useState();
+  useEffect(() => {
+    //when time reaches 0 sets the time to null
+    if (time === 0) {
+      setTime(null);
+      setDisableButton("");
+    }
+    //when time is null it will exit
+    if (!time) {
+      return;
+    }
+    const timer = setInterval(() => {
+      setTime(time - 1);
+    }, 1000);
+    return () => clearInterval(timer);
+  }, [time]);
 
   const NUMBER_OF_SLOTS = 4;
 
@@ -42,6 +63,12 @@ export default function Reel() {
     //able to ADD "Ring_Animation" to className
     setReelAnimation("Reel_Animation_START");
     console.log("--Starting Animation---");
+
+    const stopTimer = setTimeout(() => {
+      handleStop();
+    }, 5000);
+
+    return () => clearTimeout(stopTimer);
   }
 
   function handleStop() {
@@ -52,6 +79,11 @@ export default function Reel() {
     //changes the slotNumber array so the ending animation changes
     changeEndingAnimation();
     //divScroll.current.scrollIntoView();
+
+    //begins the countdown timer by setting it to 5 instead of null
+    setTime(7);
+
+    setDisableButton("Disable");
   }
   const pushups = useFetchWorkouts("pushups");
   const calfraises = useFetchWorkouts("calfraises");
@@ -61,12 +93,13 @@ export default function Reel() {
   return (
     <>
       <span className="ExerciseText">{`${excerciseText}`}</span>
+
       <div className={`Reel ${reelAnimation}`}>
         {pushups.map((pushup) => (
           <video
             key={pushup}
-            id={`slot${slotNumber[0]}`}
-            className="slot"
+            id={`Slot${slotNumber[0]}`}
+            className="Slot"
             src={pushup}
             autoPlay
             loop
@@ -75,8 +108,8 @@ export default function Reel() {
         {squats.map((squat) => (
           <video
             key={squat}
-            id={`slot${slotNumber[1]}`}
-            className="slot"
+            id={`Slot${slotNumber[1]}`}
+            className="Slot"
             src={squat}
             autoPlay
             loop
@@ -85,8 +118,8 @@ export default function Reel() {
         {crunches.map((crunch) => (
           <video
             key={crunch}
-            id={`slot${slotNumber[2]}`}
-            className="slot"
+            id={`Slot${slotNumber[2]}`}
+            className="Slot"
             src={crunch}
             autoPlay
             loop
@@ -95,8 +128,8 @@ export default function Reel() {
         {calfraises.map((calfraise) => (
           <video
             key={calfraise}
-            id={`slot${slotNumber[3]}`}
-            className="slot"
+            id={`Slot${slotNumber[3]}`}
+            className="Slot"
             src={calfraise}
             autoPlay
             loop
@@ -106,15 +139,17 @@ export default function Reel() {
       {/* <button onClick={handleStart}>START</button>
       <button onClick={handleStop}>STOP</button> */}
       <Button
-        className={"StartButton"}
-        buttonName={"Start"}
+        className={`StartButton ${disableButton}`}
+        buttonName={"Spin"}
         clicked={() => handleStart()}
+        disableTime={5000}
       />
-      <Button
+      {/* <Button
         className={"StopButton"}
         buttonName={"Stop"}
         clicked={handleStop}
-      />
+      /> */}
+      <div className="Time">{time}</div>
     </>
   );
 }

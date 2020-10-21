@@ -29,21 +29,33 @@
 }
 
 .StartButton {
-  background-color: #4caf50; /* Green */
+  background-color: #4caf50;
   color: white;
   position: absolute;
-  left: 10%;
+  left: 30%;
   bottom: -20%;
   z-index: 2;
 }
 
 .StopButton {
-  background-color: #ff6666; /* Green */
+  background-color: #ff6666;
   color: white;
   border: 700px;
   position: absolute;
   right: 10%;
   bottom: -20%;
+  z-index: 2;
+}
+.Disable {
+  pointer-events: none;
+  background-color: grey;
+}
+
+.Time {
+  color: white;
+  position: absolute;
+  left: 45%;
+  bottom: -25%;
   z-index: 2;
 }
 
@@ -59,7 +71,7 @@
   }
 }
 
-.slot {
+.Slot {
   flex-direction: column;
   position: absolute;
   left: 0;
@@ -69,17 +81,17 @@
   z-index: 0;
 }
 
-#slot1 {
+#Slot1 {
   transform: rotateX(0deg) translateZ(200px);
 }
 
-#slot2 {
+#Slot2 {
   transform: rotateX(90deg) translateZ(200px);
 }
 
-#slot3 {
+#Slot3 {
   transform: rotateX(180deg) translateZ(200px);
 }
-#slot4 {
+#Slot4 {
   transform: rotateX(270deg) translateZ(200px);
 }
