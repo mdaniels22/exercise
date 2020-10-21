@@ -125,7 +125,7 @@ function App() {
   return (
     <div className="Container">
       {/* <span className="ExerciseText">{`${exerciseText}`}</span> */}
-      <div className="display">
+      <div className="display absolute">
         <Reel />
       </div>
     </div>

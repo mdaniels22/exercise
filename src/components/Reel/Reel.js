@@ -60,8 +60,8 @@ export default function Reel() {
 
   return (
     <>
+      <span className="ExerciseText">{`${excerciseText}`}</span>
       <div className={`Reel ${reelAnimation}`}>
-        <span className="ExerciseText">{`${excerciseText}`}</span>
         {pushups.map((pushup) => (
           <video
             key={pushup}

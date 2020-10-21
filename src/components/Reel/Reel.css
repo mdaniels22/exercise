@@ -5,7 +5,6 @@
   height: 300px;
   width: 300px;
   transform-style: preserve-3d;
-  z-index: -1;
 }
 
 .Reel_Animation_START {
@@ -25,7 +24,7 @@
 .ExerciseText {
   position: absolute;
   top: -25%;
-  left: 10%;
+  left: 35%;
   z-index: 2;
 }
 
@@ -39,7 +38,7 @@
 }
 
 .StopButton {
-  background-color: #4caf50; /* Green */
+  background-color: #ff6666; /* Green */
   color: white;
   border: 700px;
   position: absolute;
@@ -66,8 +65,8 @@
   left: 0;
   min-height: 300px;
   max-width: 300px;
-  object-fit: cover;
-  z-index: -2;
+  object-fit: fill;
+  z-index: 0;
 }
 
 #slot1 {
