@@ -2,12 +2,14 @@ import React, { useEffect, useState } from "react";
 import useFetchWorkouts from "../../custom-hooks/useFetchWorkouts";
 import "./Reel.css";
 import Button from "../Button/Button";
+import Aux from "../../hoc/Auxcomponent/Auxcomponent";
 
 export default function Reel() {
   const [reelAnimation, setReelAnimation] = useState("");
   //changes the slotNumber in order to change the starting/ending exercise animation
   const [slotNumber, setSlotNumber] = useState(["1", "2", "3", "4"]);
   const [excerciseText, setExerciseText] = useState("Exercise!");
+  const [textAnimation, setTextAnimation] = useState("");
 
   //enalbe button to be disabled
   const [disableButton, setDisableButton] = useState("");
@@ -62,6 +64,7 @@ export default function Reel() {
   function handleStart() {
     //able to ADD "Ring_Animation" to className
     setReelAnimation("Reel_Animation_START");
+
     console.log("--Starting Animation---");
 
     const stopTimer = setTimeout(() => {
@@ -74,6 +77,7 @@ export default function Reel() {
   function handleStop() {
     //REMOVES "Ring_Animation" from className
     setReelAnimation("Reel_Animation_STOP");
+
     console.log("---The Animation has STOPPED ---");
 
     //changes the slotNumber array so the ending animation changes
@@ -81,9 +85,10 @@ export default function Reel() {
     //divScroll.current.scrollIntoView();
 
     //begins the countdown timer by setting it to 5 instead of null
-    setTime(7);
+    setTime(11);
 
     setDisableButton("Disable");
+    setTextAnimation("Text_Animation");
   }
   const pushups = useFetchWorkouts("pushups");
   const calfraises = useFetchWorkouts("calfraises");
@@ -91,8 +96,11 @@ export default function Reel() {
   const squats = useFetchWorkouts("squats");
 
   return (
-    <>
-      <span className="ExerciseText">{`${excerciseText}`}</span>
+    <Aux>
+      <span className={`ExerciseText ${textAnimation}`}>
+        {`${excerciseText}`}
+      </span>
+      <span className="Time">{time}</span>
 
       <div className={`Reel ${reelAnimation}`}>
         {pushups.map((pushup) => (
@@ -136,6 +144,7 @@ export default function Reel() {
           />
         ))}
       </div>
+
       {/* <button onClick={handleStart}>START</button>
       <button onClick={handleStop}>STOP</button> */}
       <Button
@@ -149,7 +158,6 @@ export default function Reel() {
         buttonName={"Stop"}
         clicked={handleStop}
       /> */}
-      <div className="Time">{time}</div>
-    </>
+    </Aux>
   );
 }
