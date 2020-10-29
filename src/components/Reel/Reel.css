@@ -36,6 +36,11 @@
   z-index: 2;
   transform: scale(1, 1);
 }
+.Time {
+  font-size: 25px;
+  color: #dfe6e9;
+  z-index: 2;
+}
 
 .StartButton {
   background-color: #272c2e;
@@ -68,11 +73,6 @@
 .Disable {
   pointer-events: none;
   background-color: grey;
-}
-
-.Time {
-  color: white;
-  z-index: 2;
 }
 
 @keyframes x-spin {

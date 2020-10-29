@@ -100,7 +100,7 @@ export default function Reel() {
       <span className={`ExerciseText ${textAnimation}`}>
         {`${excerciseText}`}
       </span>
-      <span className="Time">{time}</span>
+      <span className="Time">Remaining Time: {time}</span>
 
       <div className={`Reel ${reelAnimation}`}>
         {pushups.map((pushup) => (
@@ -153,11 +153,6 @@ export default function Reel() {
         clicked={() => handleStart()}
         disableTime={5000}
       />
-      {/* <Button
-        className={"StopButton"}
-        buttonName={"Stop"}
-        clicked={handleStop}
-      /> */}
     </Aux>
   );
 }
