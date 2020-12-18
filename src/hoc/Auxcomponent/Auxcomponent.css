@@ -7,8 +7,69 @@
   width: 100vw;
 }
 
-.Container_Child {
+.Container_smartphone {
   position: relative;
-  height: 300px;
+  height: 640px;
   width: 300px;
+  margin: auto;
+  border: 12px #121212 solid;
+  border-top-width: 30px;
+  border-bottom-width: 30px;
+  border-radius: 15px;
+
+  box-shadow: 0px 3px 0 #000, 0px 4px 0 #000, 0px 5px 0 #000, 0px 7px 0 #000,
+    0px 10px 20px #000;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  overflow: hidden;
+}
+
+.Container_smartphone:before {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 5px;
+  position: absolute;
+  top: -15px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #333;
+  border-radius: 10px;
+}
+
+@media only screen and (max-width: 600px) {
+  .Container_smartphone {
+    position: relative;
+    height: 640px;
+    width: 300px;
+    margin: auto;
+    border: 1px #121212 solid;
+    border-top-width: 1px;
+    border-bottom-width: 1px;
+    border-radius: 15px;
+
+    box-shadow: 0px 10px 20px #000;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .Container_smartphone:before {
+    content: "";
+    display: block;
+    width: 0px;
+    height: 0px;
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #333;
+    border-radius: 10px;
+  }
 }

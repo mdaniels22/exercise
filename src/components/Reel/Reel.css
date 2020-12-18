@@ -1,14 +1,18 @@
 .Reel {
-  /* position: absolute;
+  position: absolute;
   left: 0;
-  top: 0; */
-  height: 300px;
+  /* top: 0; */
+  height: 600px;
   width: 300px;
-  transform-style: preserve-3d;
-  display: flex;
 
-  justify-content: center;
-  align-items: center;
+  transform-style: preserve-3d;
+  /* display: flex; */
+
+  /* justify-content: center;
+  align-items: center; */
+  /* transform: rotate3d(0.5, 0, 0, -5deg); */
+  backface-visibility: visible;
+  /* perspective: 4500px; */
 }
 
 .Reel_Animation_START {
@@ -27,38 +31,84 @@
 }
 
 .ExerciseText {
+  font-size: 40px;
+
+  color: black;
+  -webkit-text-fill-color: white;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
+
+  position: absolute;
+  top: 2%;
+  text-align: center;
+  z-index: 2;
+
+  /* width: 100%;
+
   font-size: 30px;
+  text-align: center;
   color: #dfe6e9;
-  /* position: absolute;
-  top: 10%;
-  left: 20%; */
+  position: absolute;
+  top: -2%;
+  left: 5%;
   margin: 5%;
   z-index: 2;
   transform: scale(1, 1);
+
+  margin: 5%;
+  border-radius: 25px;
+  padding: 15px 10px;
+
+  background-image: linear-gradient(to right, #27b99c, #036d58); */
 }
 .Time {
+  font-size: 40px;
+
+  color: black;
+  -webkit-text-fill-color: white;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
+
+  position: absolute;
+  top: 15%;
+  text-align: center;
+  z-index: 2;
+
+  /* position: absolute;
+  top: 18%;
+  left: 5%; 
+  width: 100%;
   font-size: 25px;
+  text-align: center;
   color: #dfe6e9;
   z-index: 2;
+
+  margin: 5%;
+  border-radius: 25px;
+  padding: 15px 10px;
+
+  box-shadow: 0 7px 7px rgb(58, 58, 58);
+  background-image: linear-gradient(to right, #27b99c, #036d58); */
 }
 
 .StartButton {
   background-color: #272c2e;
   background-image: linear-gradient(to right, #27b99c, #036d58);
   color: #dfe6e9;
-  /* position: absolute;
-  left: 28%;
-  bottom: -36%; */
+  position: absolute;
+  left: 15%;
+  bottom: 5%;
   margin: 5%;
   z-index: 2;
-  border-color: #00b894;
-  border-style: solid;
-  box-shadow: 0 6px 3px rgb(58, 58, 58);
+  /* border-color: #00b894;
+  border-style: solid; */
+  box-shadow: 0 7px 7px rgb(58, 58, 58);
 }
 
 .StartButton:active {
   box-shadow: 0 1px 3px rgb(58, 58, 58);
   transform: translateY(4px);
+  z-index: 2;
 }
 
 /* .StopButton {
@@ -91,27 +141,45 @@
   flex-direction: column;
   position: absolute;
   left: 0;
-  height: 100%;
-  width: 100%;
+  top: 25%;
+  height: 300px;
+  width: 300px;
   object-fit: fill;
   z-index: 0;
-  border-radius: 10px;
-  transform: translateZ(200px);
+  border-radius: 0px;
+  /* transform: translateZ(200px); */
 }
 
+/* DOUBLED the amoutn of slots to 8 to make look more like wheel instead of box */
 #Slot1 {
-  transform: rotateX(0deg) translateZ(200px);
+  /* translateZ uses 235 so stots dont overlap */
+
+  transform: rotateX(0deg) translateZ(350px);
 }
 
 #Slot2 {
-  transform: rotateX(90deg) translateZ(200px);
+  transform: rotateX(45deg) translateZ(350px);
 }
 
 #Slot3 {
-  transform: rotateX(180deg) translateZ(200px);
+  transform: rotateX(90deg) translateZ(350px);
 }
 #Slot4 {
-  transform: rotateX(270deg) translateZ(200px);
+  transform: rotateX(135deg) translateZ(350px);
+}
+#Slot5 {
+  transform: rotateX(180deg) translateZ(350px);
+}
+
+#Slot6 {
+  transform: rotateX(225deg) translateZ(350px);
+}
+
+#Slot7 {
+  transform: rotateX(270deg) translateZ(350px);
+}
+#Slot8 {
+  transform: rotateX(315deg) translateZ(350px);
 }
 
 @keyframes text-increase {

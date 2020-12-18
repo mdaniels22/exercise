@@ -7,7 +7,16 @@ import Aux from "../../hoc/Auxcomponent/Auxcomponent";
 export default function Reel() {
   const [reelAnimation, setReelAnimation] = useState("");
   //changes the slotNumber in order to change the starting/ending exercise animation
-  const [slotNumber, setSlotNumber] = useState(["1", "2", "3", "4"]);
+  const [slotNumber, setSlotNumber] = useState([
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7",
+    "8",
+  ]);
   const [excerciseText, setExerciseText] = useState("Exercise!");
   const [textAnimation, setTextAnimation] = useState("");
 
@@ -32,7 +41,7 @@ export default function Reel() {
     return () => clearInterval(timer);
   }, [time]);
 
-  const NUMBER_OF_SLOTS = 4;
+  const NUMBER_OF_SLOTS = 8;
 
   let randomNumber = Math.floor(Math.random() * NUMBER_OF_SLOTS);
   // console.log({ randomNumber });
@@ -40,23 +49,40 @@ export default function Reel() {
   const changeEndingAnimation = () => {
     switch (randomNumber) {
       case 0:
-        setSlotNumber(["1", "2", "3", "4"]);
+        setSlotNumber(["1", "2", "3", "4", "5", "6", "7", "8"]);
         setExerciseText("PUSHUPS!");
         break;
       case 1:
-        setSlotNumber(["2", "3", "4", "1"]);
+        setSlotNumber(["8", "1", "2", "3", "4", "5", "6", "7"]);
         setExerciseText("CALFRAISES!");
         break;
       case 2:
-        setSlotNumber(["3", "4", "1", "2"]);
+        setSlotNumber(["7", "8", "1", "2", "3", "4", "5", "6"]);
         setExerciseText("CRUNCHES!");
         break;
       case 3:
-        setSlotNumber(["4", "1", "2", "3"]);
+        setSlotNumber(["6", "7", "8", "1", "2", "3", "4", "5"]);
         setExerciseText("SQUATS!");
         break;
+      case 4:
+        setSlotNumber(["5", "6", "7", "8", "1", "2", "3", "4"]);
+        setExerciseText("PUSHUPS!");
+        break;
+      case 5:
+        setSlotNumber(["4", "5", "6", "7", "8", "1", "2", "3"]);
+        setExerciseText("CALFRAISES!");
+        break;
+      case 6:
+        setSlotNumber(["3", "4", "5", "6", "7", "8", "1", "2"]);
+        setExerciseText("CRUNCHES!");
+        break;
+      case 7:
+        setSlotNumber(["2", "3", "4", "5", "6", "7", "8", "1"]);
+        setExerciseText("SQUATS!");
+        break;
+
       default:
-        setSlotNumber(["1", "2", "3", "4"]);
+        setSlotNumber(["1", "2", "3", "4", "5", "6", "7", "8"]);
         console.log("--Switch statement went to Default--");
     }
   };
@@ -137,6 +163,46 @@ export default function Reel() {
           <video
             key={calfraise}
             id={`Slot${slotNumber[3]}`}
+            className="Slot"
+            src={calfraise}
+            autoPlay
+            loop
+          />
+        ))}
+        {pushups.map((pushup) => (
+          <video
+            key={pushup}
+            id={`Slot${slotNumber[4]}`}
+            className="Slot"
+            src={pushup}
+            autoPlay
+            loop
+          />
+        ))}
+        {squats.map((squat) => (
+          <video
+            key={squat}
+            id={`Slot${slotNumber[5]}`}
+            className="Slot"
+            src={squat}
+            autoPlay
+            loop
+          />
+        ))}
+        {crunches.map((crunch) => (
+          <video
+            key={crunch}
+            id={`Slot${slotNumber[6]}`}
+            className="Slot"
+            src={crunch}
+            autoPlay
+            loop
+          />
+        ))}
+        {calfraises.map((calfraise) => (
+          <video
+            key={calfraise}
+            id={`Slot${slotNumber[7]}`}
             className="Slot"
             src={calfraise}
             autoPlay
