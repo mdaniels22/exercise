@@ -54,7 +54,7 @@ export default function Reel() {
         break;
       case 1:
         setSlotNumber(["8", "1", "2", "3", "4", "5", "6", "7"]);
-        setExerciseText("CALFRAISES!");
+        setExerciseText("SQUATS!");
         break;
       case 2:
         setSlotNumber(["7", "8", "1", "2", "3", "4", "5", "6"]);
@@ -62,7 +62,7 @@ export default function Reel() {
         break;
       case 3:
         setSlotNumber(["6", "7", "8", "1", "2", "3", "4", "5"]);
-        setExerciseText("SQUATS!");
+        setExerciseText("CALFRAISES!");
         break;
       case 4:
         setSlotNumber(["5", "6", "7", "8", "1", "2", "3", "4"]);
@@ -70,7 +70,7 @@ export default function Reel() {
         break;
       case 5:
         setSlotNumber(["4", "5", "6", "7", "8", "1", "2", "3"]);
-        setExerciseText("CALFRAISES!");
+        setExerciseText("SQUATS!");
         break;
       case 6:
         setSlotNumber(["3", "4", "5", "6", "7", "8", "1", "2"]);
@@ -78,7 +78,7 @@ export default function Reel() {
         break;
       case 7:
         setSlotNumber(["2", "3", "4", "5", "6", "7", "8", "1"]);
-        setExerciseText("SQUATS!");
+        setExerciseText("CALFRAISES!");
         break;
 
       default:

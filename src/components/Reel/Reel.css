@@ -154,32 +154,32 @@
 #Slot1 {
   /* translateZ uses 235 so stots dont overlap */
 
-  transform: rotateX(0deg) translateZ(350px);
+  transform: rotateX(0deg) translateZ(360px);
 }
 
 #Slot2 {
-  transform: rotateX(45deg) translateZ(350px);
+  transform: rotateX(45deg) translateZ(360px);
 }
 
 #Slot3 {
-  transform: rotateX(90deg) translateZ(350px);
+  transform: rotateX(90deg) translateZ(360px);
 }
 #Slot4 {
-  transform: rotateX(135deg) translateZ(350px);
+  transform: rotateX(135deg) translateZ(360px);
 }
 #Slot5 {
-  transform: rotateX(180deg) translateZ(350px);
+  transform: rotateX(180deg) translateZ(360px);
 }
 
 #Slot6 {
-  transform: rotateX(225deg) translateZ(350px);
+  transform: rotateX(225deg) translateZ(360px);
 }
 
 #Slot7 {
-  transform: rotateX(270deg) translateZ(350px);
+  transform: rotateX(270deg) translateZ(360px);
 }
 #Slot8 {
-  transform: rotateX(315deg) translateZ(350px);
+  transform: rotateX(315deg) translateZ(360px);
 }
 
 @keyframes text-increase {
